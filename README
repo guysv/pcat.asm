@@ -1,0 +1,16 @@
+pcat - primitive concat (cat) for windows
+could be used as an alternative to `type` using `pcat.exe < file`
+a poor man's alternative to this program could be `findstr`
+`findstr /V /L AL0NGSTR1NGW1THN0H1TS file`
+that is, if you're cool with the edge case :)
+compile:
+nasm -fwin32 pcat.asm
+link:
+link /entry:main pcat.obj /subsystem:console /nodefaultlib kernel32.lib
+TOOD:
+  * error indication
+  * smaller stack
+  * cli arguments? (probably sucks)
+  * aslr?
+I thank Peter Kolfer (Code-Cop) for his wonderful article
+http://blog.code-cop.org/2015/07/hello-world-windows-32-assembly.html
